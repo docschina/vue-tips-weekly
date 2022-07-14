@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "translate": "npx zx scripts/start-translate.js",
+    "docs:dev": "vitepress dev posts",
+    "docs:build": "vitepress build posts",
+    "docs:serve": "vitepress serve posts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,8 @@
     "html-to-md": "^0.5.8"
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
   }
 }

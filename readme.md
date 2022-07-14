@@ -19,3 +19,5 @@
 - 获取网址。参考来源
 - 新增文章。`node app xxx.com`
 - 开始翻译。`npx zx scripts/start-translate.js`
+
+- 发起 PR https://github.com/docschina/vue-tips-weekly/compare/main...translate/69
