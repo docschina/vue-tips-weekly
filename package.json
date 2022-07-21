@@ -6,8 +6,11 @@
   "scripts": {
     "translate": "npx zx scripts/start-translate.js",
     "docs:dev": "vitepress dev posts",
-    "docs:build": "vitepress build posts",
-    "docs:serve": "vitepress serve posts"
+    "d": "vitepress dev posts",
+    "docs:build": "npx zx scripts/set-list.mjs && vitepress build posts",
+    "b": "npm run docs:build",
+    "docs:serve": "vitepress serve posts",
+    "s": "vitepress serve posts --port 5001"
   },
   "keywords": [],
   "author": "",
