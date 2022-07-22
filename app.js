@@ -39,7 +39,8 @@ const main = () => {
         console.log("No post found");
         return;
       }
-      post = `# ${title}\n${post}\n## 来源\n\n${url}\n`;
+      post = `# ${title}\n${post}\n## 来源\n\n原文 ${url}\n\n本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
+`;
       const md = html2md(post, {}, false);
       //  prettier.resolveConfig(filePath).then((options) => {
       //    const md = prettier.format(md, options);
