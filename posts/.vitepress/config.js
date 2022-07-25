@@ -1,15 +1,22 @@
+import { list } from "./list.js";
+
+const items = list.map((i) => {
+  const title = (i.match(/^(\d+)(?=\.html)/g) ?? [])[0];
+
+  return {
+    text: title,
+    link: `/${i}`,
+  };
+});
+console.log(3, items);
 export default {
-  title: "Vue Tips Weekly",
-  description: "Vue Tips Weekly",
+  title: "Vue Tips",
+  description: "Vue Tips",
   themeConfig: {
     sidebar: [
       {
         text: "Posts",
-        items: [
-          { text: "069", link: "/069" },
-          // { text: "Getting Started", link: "/getting-started" },
-          // ...
-        ],
+        items,
       },
     ],
   },
