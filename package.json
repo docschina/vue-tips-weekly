@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "translate": "npx zx scripts/start-translate.js",
+    "translate:start": "npx zx scripts/start-translate.js",
     "docs:dev": "vitepress dev posts",
     "d": "vitepress dev posts",
     "docs:build": "npx zx scripts/set-list.mjs && vitepress build posts",
