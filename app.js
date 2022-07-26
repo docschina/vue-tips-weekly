@@ -1,12 +1,12 @@
-const html2md = require('html-to-md');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const fs = require('fs/promises');
-const path = require('path');
-const cli = require('cac')();
+const html2md = require("html-to-md");
+const axios = require("axios");
+const cheerio = require("cheerio");
+const fs = require("fs/promises");
+const path = require("path");
+const cli = require("cac")();
 
-cli.option('--url <url>', '输入网址', {
-  default: '',
+cli.option("--url <url>", "输入网址", {
+  default: "",
 });
 const { args, options } = cli.parse();
 console.log(args);
@@ -15,7 +15,7 @@ console.log(args);
 
 const url = args.length === 1 ? args[0] : null;
 if (!url) {
-  console.log('No url specified');
+  console.log("No url specified");
   return;
 }
 
@@ -25,22 +25,22 @@ const main = () => {
     .then((response) => {
       const rawHTML = response.data;
       if (!rawHTML) {
-        console.log('No HTML found');
+        console.log("No HTML found");
         return;
       }
       const $ = cheerio.load(rawHTML);
-      const title = $('.post-header').text();
+      const title = $(".post-header").text();
       let index = url.match(/weekly-(\d*)/);
       console.log(title);
-      index = Array.isArray(index) && index.length > 1 ? index[1] : '';
+      index = Array.isArray(index) && index.length > 1 ? index[1] : "";
 
-      let post = $('.post-grid').html();
+      let post = $(".post-grid").html();
       if (!post) {
-        console.log('No post found');
+        console.log("No post found");
         return;
       }
       const postHead = `---
-title: ${title}
+title: "${title}"
 head:
   - - link
     - rel: canonical
@@ -64,13 +64,13 @@ head:
       };
     })
     .then(async ({ index, md }) => {
-      const _path = path.resolve(__dirname, 'posts/' + index + '.md');
+      const _path = path.resolve(__dirname, "posts/" + index + ".md");
 
       // prettier.format(text);
-      return fs.writeFile(_path, md, 'utf8');
+      return fs.writeFile(_path, md, "utf8");
     })
     .then(() => {
-      console.log('done');
+      console.log("done");
     })
     .catch((error) => {
       console.error(error);
