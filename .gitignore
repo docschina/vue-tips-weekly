@@ -1,2 +1,3 @@
 node_modules/
 posts/.vitepress/dist/
+.env.local
