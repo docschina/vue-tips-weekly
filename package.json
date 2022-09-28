@@ -11,7 +11,8 @@
     "docs:build": "npx zx scripts/set-list.mjs && vitepress build posts",
     "b": "npm run docs:build",
     "docs:serve": "vitepress serve posts",
-    "s": "vitepress serve posts --port 5001"
+    "s": "vitepress serve posts --port 5001",
+    "adddoc": "git add . && git commit -m 'docs: add doc'"
   },
   "keywords": [],
   "author": "",
