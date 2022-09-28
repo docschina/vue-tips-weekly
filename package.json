@@ -12,7 +12,8 @@
     "b": "npm run docs:build",
     "docs:serve": "vitepress serve posts",
     "s": "vitepress serve posts --port 5001",
-    "adddoc": "git add . && git commit -m 'docs: add doc'"
+    "adddoc": "git add . && git commit -m 'docs: add doc'",
+    "editdoc": "git add . && git commit -m 'docs: edit doc'"
   },
   "keywords": [],
   "author": "",
